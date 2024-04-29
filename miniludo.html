@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ludo</title>
+</head>
+
+<body>
+    <h2>Javascript </h2>
+    <p>Ludo king effect</p>
+
+    <button onclick="
+      document.querySelector('.demo')
+                .innerHTML = getRndInteger(1,12);
+    ">Click here</button>
+
+    <p class="demo"></p>
+
+    <script>
+        
+
+        function getRndInteger(min,max){
+            const result= Math.floor(Math.random() * (max - min +1)) +min;
+
+            if(result == 1 || result == 2 || result == 3 || result == 4 || result == 5 || result == 6 || result == 12){
+                return result;
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
