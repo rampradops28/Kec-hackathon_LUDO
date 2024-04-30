@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Register page</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #B0B6D0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 1rem;
+    margin: 150px 50px;
+    background-color: #FBFBFC;
+    height: 900px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    height: auto;
+    border-right: 10px solid white;
+    gap: 10px;
+}
+
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 50px;
+    font-size: 30px;
+    font-weight: 100;
+    text-decoration: overline solid #0B1CD5;
+    padding: 10px;
+}
+
+.img {
+    width: 100%;
+    height: 900px;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.form {
+    display: none;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.form.active {
+    display: flex;
+    transform: scale(1);
+    opacity: 1;
+    flex-direction: column;
+    gap: 10px;
+    animation: show 1s;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+input {
+    padding: 10px;
+    outline: none;
+    border: 1px solid #5E5763;
+    border-radius: 5px;
+    background-color: #FBFBFC;
+}
+
+.password,
+.email {
+    border: none;
+    padding: 20px;
+    width: 60%;
+}
+
+.email {
+    width: 100%;
+}
+
+.pass-reset {
+    border: 1px solid #B0B6D0;
+    padding: 0 5px;
+    border-radius: 10px;
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-between;
+    justify-items: baseline;
+    align-items: baseline;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.reset-password {
+    font-size: 15px;
+    padding-right: 10px;
+}
+
+.remember-box {
+    border: none;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.remember-text {
+    font-size: 15px;
+}
+
+.remember {
+    margin-right: 15px;
+}
+
+.btn {
+    padding: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all ease 0.3s;
+}
+
+.btn-login {
+    background-color: #4054D2;
+    color: #ffffff;
+    border-radius: 9px;
+}
+
+.btn-login:hover {
+    background-color: #0B1CD5;
+}
+
+.btn-gogle-auth {
+    background-color: #FBFBFC;
+    color: black;
+    border-radius: 9px;
+    border: 1px solid #B0B6D0;
+}
+
+.google {
+    margin-right: 10px;
+    color: red;
+    font-size: 15px;
+}
+
+p {
+    font-size: 15px;
+}
+
+.or {
+    color: #B0B6D0;
+    align-self: center;
+    text-align: center;
+}
+
+.or::before {
+    content: "────────────────────────";
+    margin-right: 10px;
+
+}
+
+.or::after {
+    content: "────────────────────────";
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #3856d1;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+label {
+    font-size: 15px;
+}
+
+a:hover {
+    color: #07139C;
+}
+
+
+
+@media screen and (max-width: 810px){
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    .container {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        border-radius: 0;
+        width: 80%;
+        background: linear-gradient(to right, #FFECD2, #FCB69F);
+        width: 100%;
+        align-items: flex-start;
+        position: absolute;
+        height: 100%;
+    }
+    
+    .img {
+        display: none;
+        
+    }
+
+    .row {
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+        border: 0;
+    }
+    .form {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+    .pass-reset {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+        border: none;
+    }
+    .remember-box {
+        flex-direction: row;
+    }
+    .email, .password {
+        width: 100%;
+        border: 1px solid #5E5763;
+
+        margin-bottom: 10px;
+    }
+    .or {
+        width: 100%;
+    }
+    .or::before {
+        content: '';
+        padding: 0;
+        margin: 0;
+    }
+    .or::after {
+        content: '';
+        padding: 0;
+        margin: 0;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <img src="login.jpg" alt="img" class="img">
+        </div>
+        <div class="row">
+            <form method="POST" class="form active" id="login">
+                <h2>Login</h2>
+                <label for="email">Email Address</label>
+                <div class="pass-reset" onclick="activeInput(this)">
+                    <input type="email" name="email" class="email" id="emailInput" placeholder="name@mail.com">
+                </div>
+                <label for="password">Password</label>
+                <div class="pass-reset" onclick="activeInput(this)">
+                    <input type="password" class="password" name="password" id="password" placeholder="**********">
+                    <a href="#" class="reset-password">Reset Password</a>
+                </div>
+                
+                <button class="btn btn-login" onclick="login();"><a href="home.html">Login</a></button>
+                <p>Don't have an account? <a onclick="changeToRegister()" id="changeToRegister">Sign up</a></p>
+                <p class="or">or</p>
+                <button class="btn btn-gogle-auth"><i class="google ri-google-fill"></i>Authorize with Google</button>
+            </form>
+            <form action="#" class="form" id="register">
+                <h2>Register</h2>
+                <label for="email">Email Address</label>
+                <div class="pass-reset" onclick="activeInput(this)">
+                    <input type="email" name="email" class="email" id="email" placeholder="name@mail.com">
+                </div>
+                <label for="password">Password</label>
+                <div class="pass-reset" onclick="activeInput(this)">
+                    <input type="password" class="password" name="password" id="password" placeholder="**********">
+                </div>
+                <label for="re-password">Username</label>
+                <div class="pass-reset" onclick="activeInput(this)">
+                    <input type="password" class="password" name="username" id="re-password" placeholder="Enter your name">
+                </div>
+                <button class="btn btn-login" onclick="signup();"><a href="home.html">Register</a></button>
+                <p>Do you have an account? <a onclick="changeToLogin()" id="chnageToLogin">Sign in</a></p>
+                <p class="or">or</p>
+                <button class="btn btn-gogle-auth"><i class="google ri-google-fill"></i>Authorize with Google</button>
+            </form>
+        </div>
+    </div>
+    <!-- JS -->
+    <script>
+        function changeToRegister() {
+    const changeToRegisterBtn = document.querySelector('#changeToRegister');
+    const changeToLogin = document.querySelector('#changeToLogin');
+    const loginForm = document.querySelector('#login');
+    const registerForm = document.querySelector('#register');
+    changeToRegisterBtn.addEventListener('click', () => {
+        loginForm.classList.remove('active')
+        registerForm.classList.add('active')
+    })
+}
+changeToRegister();
+
+function signup(){
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/signup', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 201) {
+                console.log('User created successfully');
+            } else {
+                console.error('Error creating user');
+            }
+        }
+    };
+    xhr.send(JSON.stringify({ username, email, password }));
+}
+
+
+function changeToLogin() {
+    const changeToLoginBtn = document.querySelector('#chnageToLogin');
+    const loginForm = document.querySelector('#login');
+    const registerForm = document.querySelector('#register');
+    changeToLoginBtn.addEventListener('click', () => {
+        loginForm.classList.add('active')
+        registerForm.classList.remove('active')
+    })
+}
+changeToLogin();
+
+function login() {
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/login', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log('Login successful');
+            } else if (xhr.status === 404) {
+                console.error('User not found');
+            } else if (xhr.status === 401) {
+                console.error('Invalid password');
+            } else {
+                console.error('Error logging in');
+            }
+        }
+    };
+    xhr.send(JSON.stringify({ email, password }));
+}
+
+function activeInput(event) {
+    if (screen.width > 600) {
+        let input = event;
+        input.style.border = '1px solid #4054D2';
+    }
+}
+activeInput()
+    </script>
+</body>
+
+</html>
