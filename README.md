@@ -1,7 +1,7 @@
-# Western aim game
- Western aim game
+Project Name: Ludo
+Developed by: Vanilla JavaScript
+Description:
+Ludo is a classic board game developed using vanilla JavaScript, featuring an 8x8 grid for gameplay. The project leverages pure JavaScript to create an interactive, user-friendly experience, allowing players to move their pieces across the board, roll dice, and compete to reach the finish line. This simple yet engaging game demonstrates key web development concepts like DOM manipulation, event handling, and game logic implementation.
+  
 
-![1](https://github.com/BagaturBey/Western-aim-game/assets/107503923/77993658-3548-450e-87de-270bd5ed76bd)
-![2](https://github.com/BagaturBey/Western-aim-game/assets/107503923/0b70baff-004e-4ff1-989c-1c8016f426d7)
-
-https://github.com/BagaturBey/Western-aim-game/assets/107503923/b693ff96-c0fc-4834-aed0-600b2ecd73f6
+ 
